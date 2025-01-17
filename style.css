@@ -1,0 +1,721 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "mvboli";
+  src: url("./fonts/mvboli.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "leaf";
+  src: url("./fonts/GERALDINE.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iransans";
+  src: url("./fonts/IRANSansWeb.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  font-family: "mvboli", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1; /* Behind all content */
+  animation: zoom 20s ease-in-out infinite;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.main-page {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  color: #ffffff;
+}
+
+.main-picture {
+  background-image: url("./images/image.jpg");
+  background-size: cover;
+  width: 60%;
+  height: 100%;
+  animation: zoom 20s ease-in-out infinite;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  visibility: 1;
+  padding-bottom: 3%;
+  text-align: left;
+  transition: transform 0.3s ease;
+  width: 40%;
+  position: relative;
+}
+
+.language-toggle {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 5%;
+  left: 7%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  outline: none;
+  font-family: "mvboli";
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1;
+  animation: fadeInLeft 2s ease-in-out;
+}
+
+.language-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-toggle:active {
+  background-color: transparent;
+}
+
+.title {
+  position: absolute;
+  margin-top: 12%;
+  margin-left: 7%;
+  text-align: left;
+  font-family: "leaf";
+  font-size: 6rem;
+  font-weight: normal;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  animation: fadeInLeft 2s ease-in-out;
+}
+
+.description {
+  font-family: "mvboli";
+  font-size: 1rem;
+  margin-top: 32%;
+  margin-right: 7%;
+  margin-left: 7%;
+  animation: fadeInUp 2.3s ease-in-out;
+}
+
+.description .content.fa {
+  text-align: right;
+  font-family: "iransans";
+  font-size: 1.1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  margin-top: 2%;
+  margin-left: 7%;
+  margin-right: 7%;
+  gap: 1.5%;
+  animation: fadeInUp 2.6s ease-in-out;
+}
+
+.socials {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: width 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: "mvboli", sans-serif;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.socials .icon {
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  left: 13px;
+  height: 20px;
+  width: 20px;
+}
+
+.socials .button-text {
+  position: absolute;
+  left: 60px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.socials:hover {
+  width: 24%;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.socials:hover .button-text {
+  opacity: 1;
+}
+
+.socials:active {
+  background-color: transparent;
+}
+
+.next .button {
+  position: fixed;
+  right: 1%;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.next .button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.next .icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.next .button:hover {
+  opacity: 50%;
+}
+
+.next .button:active {
+  opacity: 80%;
+}
+
+.previous .button {
+  position: fixed;
+  left: 1%;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.previous .button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.previous .icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.previous .button:hover {
+  opacity: 50%;
+}
+
+.previous .button:active {
+  opacity: 80%;
+}
+
+.second-page {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background: url("./images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  transform: translateX(100%);
+  transition: transform 0.7s ease;
+}
+
+.second-page-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.second-page.active {
+  transform: translateX(0);
+}
+
+.twitch-title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  opacity: 1; 
+  transition: opacity 0.5s ease-in-out, all 0.8s cubic-bezier(0.4, 1, 0.2, 1);
+  transition-delay: 0.3s;
+  pointer-events: none;
+  color: #518c4c;
+  font-family: "leaf", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.second-page.active .twitch-title {
+  opacity: 1;
+  transform: translateY(-380%);
+}
+
+.second-page:not(.active) .twitch-title {
+  opacity: 0;
+  transform: translateY(380%);
+}
+
+.twitch {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 85%;
+  top: 5%;
+  left: 10%;
+}
+
+.twitch .card {
+  width: 1164px;
+  height: 480px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 5px solid #518c4c;
+  animation: neon-glow 3s infinite alternate;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+footer {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: calc(env(safe-area-inset-bottom, 0%) + 12%);
+  width: 100%;
+  background-color: transparent;
+}
+
+footer .button {
+  position: relative;
+  background-color: #265022;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer .icon {
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  position: relative;
+  height: 22px;
+  width: 22px;
+}
+
+footer .button:hover {
+  background-color: #518c4c;
+  transform: scale(1.1);
+}
+
+footer .button:active {
+  background-color: #265022;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 10px 30px rgba(23, 114, 4, 0.1); /* Almost transparent */
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(23, 114, 4, 1); /* Fully visible */
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(23, 114, 4, 0.1); /* Almost transparent */
+  }
+}
+
+/* Responsive design */
+/* mobiles */
+@media (max-width: 480px) {
+  body::before {
+    background: url("./images/image.jpg") no-repeat center center fixed;
+  }
+
+  .main-picture {
+    visibility: hidden;
+    width: 0;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .language-toggle {
+    top: 3%;
+    width: 30px;
+    height: 30px;
+    font-size: 0.7rem;
+  }
+
+  .title {
+    margin-top: 17%;
+    font-size: 4rem;
+  }
+
+  .description {
+    margin-top: 38%;
+    margin-right: 10%;
+    font-size: 0.6rem;
+  }
+
+  .description .content.fa {
+    font-size: 0.65rem;
+  }
+
+  .links {
+    margin-top: 15%;
+    gap: 3%;
+  }
+
+  .socials {
+    width: 35px;
+    height: 35px;
+  }
+
+  .socials .icon {
+    left: 8px;
+    height: 15px;
+    width: 15px;
+  }
+
+  .socials .button-text {
+    left: 40px;
+    font-size: 0.7em;
+  }
+
+  .socials:hover {
+    width: 35%;
+  }
+
+  .next .icon, .previous .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .twitch-title {
+    font-size: 1.5rem;
+  }
+
+  .second-page.active .twitch-title {
+    transform: translateY(-800%);
+  }
+  
+  .second-page:not(.active) .twitch-title {
+    transform: translateY(800%);
+  }
+
+  .twitch .card {
+    width: 100%;
+    height: 80%;
+  }
+
+  iframe {
+    width: 102%;
+    height: 102%;
+  }
+
+  footer .button {
+    height: 35px;
+    width: 35px;
+  }
+
+  footer .icon {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/* tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body::before {
+    background: url("./images/image.jpg") no-repeat center center fixed;
+  }
+
+  .main-picture {
+    visibility: hidden;
+    width: 0;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .language-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 0.85rem;
+  }
+
+  .title {
+    margin-top: 17%;
+    font-size: 5rem;
+  }
+
+  .description {
+    margin-top: 45%;
+    font-size: 0.7em;
+  }
+
+  .description .content.fa {
+    font-size: 0.75rem;
+  }
+
+  .links {
+    gap: 2%;
+  }
+
+  .socials {
+    width: 35px;
+    height: 35px;
+  }
+
+  .socials .icon {
+    left: 8px;
+    height: 15px;
+    width: 15px;
+  }
+
+  .socials .button-text {
+    left: 40px;
+    font-size: 0.7em;
+  }
+
+  .socials:hover {
+    width: 25%;
+  }
+
+  .next .icon, .previous .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .twitch .card {
+    width: 100%;
+    height: 80%;
+  }
+
+  iframe {
+    width: 102%;
+    height: 105%;
+  }
+
+  .twitch-title {
+    font-size: 1.7rem;
+  }
+
+  .second-page.active .twitch-title {
+    transform: translateY(-800%);
+  }
+  
+  .second-page:not(.active) .twitch-title {
+    transform: translateY(800%);
+  }
+
+  footer .button {
+    height: 35px;
+    width: 35px;
+  }
+
+  footer .icon {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/* laptop and larger */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .main-picture {
+    background-position: center;
+  }
+
+  .card {
+    width: 60%;
+  }
+
+  .language-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 0.85rem;
+  }
+
+  .title {
+    margin-top: 17%;
+    font-size: 6rem;
+  }
+
+  .description {
+    margin-top: 45%;
+    font-size: 0.8rem;
+  }
+
+  .description .content.fa {
+    font-size: 0.85rem;
+  }
+
+  .socials {
+    width: 35px;
+    height: 35px;
+  }
+
+  .socials .icon {
+    left: 8px;
+    height: 15px;
+    width: 15px;
+  }
+
+  .socials .button-text {
+    left: 40px;
+    font-size: 0.7em;
+  }
+
+  .socials:hover {
+    width: 30%;
+  }
+
+  .next .icon, .previous .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .twitch .card {
+    width: 100%;
+    height: 80%;
+  }
+
+  iframe {
+    width: 103%;
+    height: 106%;
+  }
+
+  .twitch-title {
+    font-size: 1.9rem;
+  }
+
+  .second-page.active .twitch-title {
+    transform: translateY(-750%);
+  }
+  
+  .second-page:not(.active) .twitch-title {
+    transform: translateY(750%);
+  }
+
+  footer .button {
+    height: 35px;
+    width: 35px;
+  }
+
+  footer .icon {
+    height: 15px;
+    width: 15px;
+  }
+}
