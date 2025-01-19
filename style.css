@@ -26,7 +26,8 @@
   font-style: normal;
 }
 
-body, html {
+body,
+html {
   font-family: "mvboli", sans-serif;
   height: 100vh;
   display: flex;
@@ -164,7 +165,8 @@ img {
   border: 2px solid white;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: width 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease;
+  transition: width 0.5s ease, border-radius 0.5s ease,
+    background-color 0.5s ease;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -307,7 +309,7 @@ img {
   justify-content: center;
   align-items: center;
   z-index: -1;
-  opacity: 1; 
+  opacity: 1;
   transition: opacity 0.5s ease-in-out, all 0.8s cubic-bezier(0.4, 1, 0.2, 1);
   transition-delay: 0.3s;
   pointer-events: none;
@@ -497,7 +499,8 @@ footer .button:active {
     width: 35%;
   }
 
-  .next .icon, .previous .icon {
+  .next .icon,
+  .previous .icon {
     width: 25px;
     height: 25px;
   }
@@ -509,7 +512,7 @@ footer .button:active {
   .second-page.active .twitch-title {
     transform: translateY(-800%);
   }
-  
+
   .second-page:not(.active) .twitch-title {
     transform: translateY(800%);
   }
@@ -532,6 +535,21 @@ footer .button:active {
   footer .icon {
     height: 15px;
     width: 15px;
+  }
+}
+
+/* insta browser */
+@media (max-height: 730px) {
+  .second-page.active .twitch-title {
+    transform: translateY(-700%);
+  }
+
+  .second-page:not(.active) .twitch-title {
+    transform: translateY(700%);
+  }
+
+  footer {
+    bottom: 7%;
   }
 }
 
@@ -594,7 +612,8 @@ footer .button:active {
     width: 25%;
   }
 
-  .next .icon, .previous .icon {
+  .next .icon,
+  .previous .icon {
     width: 25px;
     height: 25px;
   }
@@ -616,7 +635,7 @@ footer .button:active {
   .second-page.active .twitch-title {
     transform: translateY(-800%);
   }
-  
+
   .second-page:not(.active) .twitch-title {
     transform: translateY(800%);
   }
@@ -682,7 +701,8 @@ footer .button:active {
     width: 30%;
   }
 
-  .next .icon, .previous .icon {
+  .next .icon,
+  .previous .icon {
     width: 25px;
     height: 25px;
   }
@@ -704,7 +724,7 @@ footer .button:active {
   .second-page.active .twitch-title {
     transform: translateY(-750%);
   }
-  
+
   .second-page:not(.active) .twitch-title {
     transform: translateY(750%);
   }
