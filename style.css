@@ -756,6 +756,14 @@ footer .button:active {
     margin-top: 32%;
     font-size: 0.75rem;
   }
+
+  .second-page.active .twitch-title {
+    transform: translateY(-600%);
+  }
+
+  .second-page:not(.active) .twitch-title {
+    transform: translateY(600%);
+  }
 }
 
 @media (max-height: 670px) {
@@ -774,6 +782,14 @@ footer .button:active {
     margin-top: 28%;
     font-size: 0.7rem;
   }
+
+  .second-page.active .twitch-title {
+    transform: translateY(-550%);
+  }
+
+  .second-page:not(.active) .twitch-title {
+    transform: translateY(550%);
+  }
 }
 
 @media (max-height: 560px) {
@@ -791,6 +807,14 @@ footer .button:active {
   .description {
     margin-top: 28%;
     font-size: 0.65rem;
+  }
+
+  .second-page.active .twitch-title {
+    transform: translateY(-500%);
+  }
+
+  .second-page:not(.active) .twitch-title {
+    transform: translateY(500%);
   }
 }
 
