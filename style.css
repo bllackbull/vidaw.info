@@ -739,3 +739,58 @@ footer .button:active {
     width: 15px;
   }
 }
+
+@media (max-height: 790px) {
+  .language-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .title {
+    margin-top: 10%;
+    font-size: 5.5rem;
+  }
+
+  .description {
+    margin-top: 32%;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-height: 670px) {
+  .language-toggle {
+    width: 25px;
+    height: 25px;
+    font-size: 0.75rem;
+  }
+
+  .title {
+    margin-top: 8%;
+    font-size: 5rem;
+  }
+
+  .description {
+    margin-top: 28%;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-height: 560px) {
+  .language-toggle {
+    width: 25px;
+    height: 25px;
+    font-size: 0.75rem;
+  }
+
+  .title {
+    margin-top: 8%;
+    font-size: 4.5rem;
+  }
+
+  .description {
+    margin-top: 28%;
+    font-size: 0.65rem;
+  }
+}
+
